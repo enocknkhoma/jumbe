@@ -1,0 +1,272 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>JUMBE.COM</title>
+	<link rel="stylesheet" href="bootstrap-4.1.3-dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="css/fixed.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link href='https://fonts.googleapis.com/css?family=Rock+Salt:400' rel='stylesheet' type='text/css'>
+</head>
+
+<body onLoad="onload()">
+
+	<nav class="navbar navbar-dark fixed-top d-flex justify-content-center align-items-center">
+		 <div style="color: #2A96D5;">JUMBE.COM<span class="text-danger">&#10084;</span></div>
+	</nav>
+
+
+
+ <div class="video-background">
+	  <div class="video-wrap">
+		   <div id="video">
+			  <video id="bgvid" autoplay muted loop playsinline >
+                    <source id="vid-source"  data-started="false" src="landing_bg.mp4" type="video/mp4">
+			  </video>
+		   </div>
+	  </div>
+ </div>
+ <div  id="landing_text" class="caption text-center p-2">
+	<h1  class="ml16">HAPPY 30TH BIRTHDAY</h1>
+	<h1 class="ml9 text-name">
+		<span class="text-wrapper p-1">
+		  <span style="font-family: Rock Salt, sans-serif;" class="letters text-white">Sarah</span>
+		</span>
+	  </h1>
+ </div>
+ <div id="gallery_btn" class="d-flex justify-content-center">
+	 <div onclick="start()"   class="text-white btn btn-lg btn-outline-dark">View Gallery</div>
+ </div>
+
+ <div id="gallery_bottom" class="d-none">
+	<h1 class="ml12">HAPPY 30TH BIRTHDAY SARAH</h1>
+	<button onclick="home()" class="btn  btn-outline-light mt-1">Home</button>
+ </div>
+
+  
+ <div class="bottom_section">
+
+	<div class="d-flex justify-content-between">
+		<div>
+			<button onclick="mute()" id="play_btn" class="mute btn btn-sm btn-outline-dark mx-2"><i id="mute-icon" class="fa fa-volume-off"></i></button>
+            <div style="font-weight: 900; color: #2A96D5;" class="mx-2" id="mute_label">UNMUTE</div>
+		</div>
+		
+   </div>
+
+ </div> 
+ <div class="audio-wrapper">
+	 <audio id="audio"  autoplay loop>
+		 <source src="audio3.mp3" type="audio/mp3">
+	 </audio>
+ </div>
+
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="audio_enable_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered" role="document">
+
+	  <div class="modal-content">
+
+		<div class="modal-header text-white" style="background-color: #2A96D5">
+		  <h5 class="modal-title" id="exampleModalLongTitle">Enable Audio</h5>
+		  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+		  </button>
+		</div>
+
+		<div class="modal-body">
+			Would you like to enable audio?
+		</div>
+
+		<div class="modal-footer ">
+		  <button type="button" onclick="mute()" style="font-size: 12px;" class="btn btn-dark" data-dismiss="modal">Yes</button>
+		  <button type="button" style="font-size: 12px;" class="btn btn-primary" data-dismiss="modal">No</button>
+		</div>
+
+	  </div>
+	  
+	</div>
+  </div>
+ 
+
+
+
+<!--- Script Source Files -->
+<script src="js/main.js"></script>
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="bootstrap-4.1.3-dist/js/bootstrap.min.js"></script>
+<!--- End of Script Source Files -->
+
+<!-- anime js cdn-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+<!-- end of anime js script-->
+
+<script>
+
+	function onload(){
+		$('#audio_enable_modal').modal('show');
+	}
+
+	function home(){
+
+
+		var audio=document.getElementById('audio');
+		var video=document.getElementById('bgvid');
+		var mute_label=document.getElementById('mute_label');
+		var play_btn=document.getElementById('play_btn');
+		var gallery_btn=document.getElementById('gallery_btn');
+		var landing_text=document.getElementById('landing_text');
+		var gallery_bottom=document.getElementById('gallery_bottom');
+
+		document.getElementById('vid-source').src="landing_bg.mp4";
+		video.load();
+		video.muted=true;
+		audio.muted=false;
+
+		mute_label.classList.remove('d-none');
+		play_btn.classList.remove('d-none');
+		gallery_btn.classList.add('d-flex');
+		gallery_btn.classList.remove('d-none');
+		landing_text.classList.remove('d-none');
+		gallery_bottom.classList.add('d-none');
+
+	}
+
+	function start(){
+		
+		var audio=document.getElementById('audio');
+		var video=document.getElementById('bgvid');
+		var mute_label=document.getElementById('mute_label');
+		var play_btn=document.getElementById('play_btn');
+		var gallery_btn=document.getElementById('gallery_btn');
+		var landing_text=document.getElementById('landing_text');
+		var gallery_bottom=document.getElementById('gallery_bottom');
+	
+		//var started=document.getElementById('vid-source').getAttribute('data-started');
+
+		
+		
+		document.getElementById('vid-source').src="video2.mp4";
+		video.load();
+		video.muted=false;
+		audio.muted=true;
+		mute_label.classList.add('d-none');
+		play_btn.classList.add('d-none');
+		gallery_btn.classList.remove('d-flex');
+		gallery_btn.classList.add('d-none');
+		landing_text.classList.add('d-none');
+		gallery_bottom.classList.remove('d-none');
+
+		
+		
+		// if(video.paused)
+		//    video.play();
+		// else
+		//    video.pause();
+
+		// if(audio.paused)
+		//    audio.play();
+		// else
+		//    audio.pause();
+	}
+	function mute(){
+		
+		var audio=document.getElementById('audio');
+		var icon = document.getElementById('mute-icon');
+		var mute_label=document.getElementById('mute_label');
+		
+
+		if(audio.paused){
+		   audio.play();
+		   
+		   icon.classList.remove('fa-volume-off');
+			icon.classList.add('fa-volume-up');
+			mute_label.innerHTML="MUTE";
+		}
+		else{
+            if(audio.muted){
+			audio.muted=false;
+			icon.classList.remove('fa-volume-off');
+			icon.classList.add('fa-volume-up');
+			mute_label.innerHTML="MUTE";
+		  }
+		   
+			else{
+				audio.muted=true;
+				icon.classList.remove('fa-volume-up');
+				icon.classList.add('fa-volume-off');
+				mute_label.innerHTML="UNMUTE";
+				
+			}
+		}
+
+		
+		 
+
+	}
+// Wrap every letter in a span
+var textWrapper = document.querySelector('.ml16');
+textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+anime.timeline({loop: true})
+  .add({
+    targets: '.ml16 .letter',
+    translateY: [-100,0],
+    easing: "easeOutExpo",
+    duration: 1400,
+    delay: (el, i) => 30 * i
+  }).add({
+    targets: '.ml16',
+    opacity: 0,
+    duration: 1000,
+    easing: "easeOutExpo",
+    delay: 1000
+  });
+  // Wrap every letter in a span
+var textWrapper = document.querySelector('.ml9 .letters');
+textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+anime.timeline({loop: true})
+  .add({
+    targets: '.ml9 .letter',
+    scale: [0, 1],
+    duration: 1500,
+    elasticity: 600,
+    delay: (el, i) => 45 * (i+1)
+  }).add({
+    targets: '.ml9',
+    opacity: 0,
+    duration: 1000,
+    easing: "easeOutExpo",
+    delay: 1000
+  });
+  // Wrap every letter in a span
+var textWrapper = document.querySelector('.ml12');
+textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+anime.timeline({loop: true})
+  .add({
+    targets: '.ml12 .letter',
+    translateX: [40,0],
+    translateZ: 0,
+    opacity: [0,1],
+    easing: "easeOutExpo",
+    duration: 1200,
+    delay: (el, i) => 500 + 30 * i
+  }).add({
+    targets: '.ml12 .letter',
+    translateX: [0,-30],
+    opacity: [1,0],
+    easing: "easeInExpo",
+    duration: 1100,
+    delay: (el, i) => 100 + 30 * i
+  });
+</script>
+
+</body>
+</html>
+

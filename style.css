@@ -1,0 +1,191 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;400&display=swap');
+body{
+  overflow-x: hidden;
+  color: #505962 ;
+  font-family: 'Lato', sans-serif;
+}
+.navbar{
+  background: rgba(0,0,0,0.6);
+  position: absolute;
+  height: 2.5rem;
+  
+}
+
+nav div{
+  color: #89CFF0;
+  font-weight: 800;
+}
+.navbar-brand img  {
+  height: 2rem ;
+}
+.video-background{
+  position: absolute;
+  width: 100%;
+  min-height: 100vh; 
+  background-color: rgba(0,0,0,0.2);
+ 
+} 
+
+.audio-wrapper{
+  position: absolute; 
+  top: 80%;
+}
+.caption{
+  position: absolute;
+  top: 40%;
+  width: 100%;
+}
+.bottom_section{
+  position: absolute;
+  top: 90%;
+  
+}
+#gallery_bottom{
+  position: absolute;
+  top: 80%;
+  text-shadow: .1rem .1rem .8rem black;
+  padding-bottom: 1rem; 
+  color: white;
+  width: 100%;
+  text-align: center;
+}
+#gallery_btn{
+  position: absolute;
+  top: 60%;
+  width: 100%;
+}
+.caption h1{
+  font-size:2rem;
+  font-weight: 700;
+  letter-spacing: .2rem;
+  text-shadow: .1rem .1rem .8rem black;
+  padding-bottom: 1rem; 
+  color: white;
+}
+.caption .mute{
+  text-shadow: .1rem .1rem .8rem black;
+}
+
+
+/*============= COURSE SECTION =============*/
+
+.col-md-8 {
+  margin: 2rem auto 8rem;
+  padding-top: 2rem;
+}
+.col-md-8 h1 {
+    font-size: 2.4rem;
+  } 
+.btn-secondary {
+  border-width: medium;
+  border-radius: 0;
+  padding: .6rem 1.2rem;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  margin: 1rem;
+  border-color: #1EBBA3;
+  background-color: #1EBBA3;
+  color: white;
+}
+.btn-secondary:hover,
+.btn-secondary:focus {
+  border-color: #189582;
+  background-color: #189582;
+  color: white;
+}
+
+
+
+.ml16 {
+  font-weight: 800;
+  font-size: 1.5em;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  overflow: hidden;
+}
+
+
+.ml16 .letter {
+  display: inline-block;
+  line-height: 1em;
+}
+
+.ml9 {
+  position: relative;
+  font-weight: 200;
+  font-size: 3 em;
+}
+
+.ml9 .text-wrapper {
+  position: relative;
+  display: inline-block;
+  padding-top: 0.2em;
+  padding-right: 0.05em;
+  padding-bottom: 0.1em;
+  overflow: hidden;
+}
+
+.ml9 .letter {
+  transform-origin: 50% 100%;
+  display: inline-block;
+  line-height: 1em;
+}
+.ml12 {
+  font-weight: 700;
+  font-size: 1.8em;
+  text-transform: uppercase;
+  font-family: Rock Salt, sans-serif;
+}
+
+.ml12 .letter {
+  display: inline-block;
+  line-height: 1em;
+}
+
+
+@media(max-width: 768px){
+  .caption h1{
+    font-size:1.4rem;
+    letter-spacing: .15rem;
+    padding-bottom: .5rem; 
+  }
+  
+  .caption h3{
+     font-size: 1.1rem;
+     padding-bottom: 1.2rem ;
+  }
+  .btn-lg{ 
+    font-size: 1rem;
+    padding: .5rem 1rem;
+  }
+  .text-name{
+    font-size: .5rem;
+  }
+  .ml12 {
+    font-size: 1rem;
+  }
+}
+
+
+
+
+/*============ BOOTSTRAP BREAK POINTS:
+
+Extra small (xs) devices (portrait phones, less than 576px)
+No media query since this is the default in Bootstrap
+
+Small (sm) devices (landscape phones, 576px and up)
+@media (min-width: 576px) { ... }
+
+Medium (md) devices (tablets, 768px and up)
+@media (min-width: 768px) { ... }
+
+Large (lg) devices (desktops, 992px and up)
+@media (min-width: 992px) { ... }
+
+Extra (xl) large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { ... }
+
+=============*/
+
